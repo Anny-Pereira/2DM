@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <titel>Exemplo de Evento DOM</titel>
+        <style>
+
+            #t {border: 1px solid red}
+            #t1{ background-color: pink;}
+
+        </style>
+
+        <script>
+            //Função para mudar o conteudo da t2
+            function mudarText()
+            {
+                var t2 = document.getElementById("t2");
+                t2.firstChild.nodeValue = "três";
+            }
+
+
+
+            //EXECUTAR - addRow("t")
+            function addRow(tableID) {
+        // Get a reference to the table
+        let tableRef = document.getElementById(tableID);
+
+        // Insert a row at the end of the table
+        let newRow = tableRef.insertRow(-1);
+
+        // Insert a cell in the row at index 0
+        let newCell = newRow.insertCell(0);
+
+        // Append a text node to the cell
+        let newText = document.createTextNode('New bottom row');
+        newCell.appendChild(newText);
+}
+
+            //Função para adicionar uma espera de evento em t (escutando/esperando um click na tabela)
+            function load()
+            {
+                var el = document.getElementById("t");
+                el.addEventListener("click", mudarText, false)
+            }
+
+            //já inicia o html esperando algum evento
+            document.addEventListener("DOMContentLoaded", load, false);
+        </script>
+    </head>
+    <body>
+        <table id= "t">
+            <tr><td id="t1">um</td></tr>
+            <tr><td id="t2">dois</td></tr>
+        </table>
+    </body>
+</html>
