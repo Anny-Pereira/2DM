@@ -102,18 +102,21 @@ carro.addPessoas = function (numeroPessoas)
 {
     let quantPessoas = carro.quantidadePessoas += numeroPessoas;
     
-    if (quantPessoas == carro.assentos) {
+    if (quantPessoas === carro.assentos || quantPessoas > carro.assentos) {
         return "O carro já está lotado!";    
     }
 
-    else if (numeroPessoas > (carro.assentos - quantPessoas)) {
-        let pessoasCabem = carro.assentos - quantPessoas;
-        return ("Só cabem mais " + pessoasCabem + " pessoas!");
+    else if (quantPessoas <= 5) {
+        return ("Já temos  " + quantPessoas + " pessoas no carro!");
     }
 
-    else if (quantPessoas == 4) {
+    else if (quantPessoas === (carro.assentos - 1)) {
         return ("Só cabe mais " + " pessoa!");
         
+    }
+
+    else if (numeroPessoas > 5) {
+        return ("Não é possível adicionar mais pessoas!");
     }
 
     return ("Já temos " + quantPessoas + " pessoas no carro!");
@@ -135,7 +138,7 @@ console.log(carro.obterCor());
 carro.mudarCor("vermelho");
 
 // E agora, qual a cor do carro?
-console.log(carro.obterCor());
+console.log(carro.obterCor(0));
 
 
 // Mude a cor do carro para verde musgo.
@@ -155,13 +158,17 @@ console.log(carro.addPessoas(2));
 console.log(carro.addPessoas(4));
 
 // Faça o carro encher.
-
+for (let index = 0; index < carro.assentos.length; index++) {
+    carro.addPessoas(1);
+    
+}
+console.log(carro.quantidadePessoas);
 
 // Tire 4 pessoas do carro.
-
+console.log(carro.addPessoas(-4));
 
 // Adicione 10 pessoas no carro.
 console.log(carro.addPessoas(10));
 
 // Quantas pessoas temos no carro?
-console.log(carro.addPessoas());
+console.log(carro.quantidadePessoas);
