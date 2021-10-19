@@ -104,29 +104,34 @@
         //
         console.log("Mostre o nome e a quantidade de jogos(vitorias, empates e derrotas), quantidade de vitorias, empates e derrotas de um time");
 
-        var valores = [t => {t.vitorias, t.derrotas, t.empates}];
-        var jogos = valores.reduce((total, item)=> total + item, 0);
-        let time = times.map( t => {
-            let todosJogos = {}
-            todosJogos.jogos
-            todosJogos.vitorias
-            todosJogos.empates
-            todosJogos.derrotas
 
-            return todosJogos;
+        var valores = times.map(t=> { 
+            let listaJogos = {}
+            
+            listaJogos.vitorias = t.vitorias
+            listaJogos.empates = t.empates
+            listaJogos.derrotas = t.derrotas
+
+            listaJogos.totalJogos = t.vitorias + t.empates + t.derrotas
+            listaJogos.nomeTime = t.nome
+
+            return listaJogos;
+ 
         });
 
-        if (time.nome === "Liverpool") {
-            console.log(time);
-        }
-    
+        let timeUnico = valores.filter(v => v.nomeTime === "Liverpool");
+
+        console.log(timeUnico);
+
 
 
         // 5.	Informe a quantidade de jogos do campeonato;
         //
         console.log("Informe a quantidade de jogos do campeonato");
 
+        let jogosTotais = valores.reduce((a,b) => a + b.totalJogos ,0);
         
+        console.log(jogosTotais);
 
 
 

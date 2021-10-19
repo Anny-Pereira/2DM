@@ -64,15 +64,20 @@
         //
         console.log("Some a idade de todos os personagens");
 
-        let ano = Date.getFullYear();
-        let criacao = personagens.dataAparicao;
+
+        var today = new Date();
+        var ano = today.getFullYear();
+       // let criacao = personagens.dataAparicao;
+       
         function idade(ano, criacao)
         {
             var idade = ano - criacao;
+            return idade;
+
             console.log("A idade do personagem é "+ idade);
         } 
 
-        var idades = personagens.map(idade()).reduce((total, item) => total+item, 0);
+        var idades = personagens.map( p =>   idade(ano, p.dataAparicao)).reduce((total, item) => total+item, 0);
 
         console.log(idades);
 
@@ -81,15 +86,19 @@
         //
         console.log("Traga somente os nomes dos personagens");
 
-        let nomesPersonagens = personagens.filter((cada)=> {return cada.nome != null});
-        console.log(nomesPersonagens);
+
+        let nomes = personagens.map(p => p.nome);
+
+
+        //let nomesPersonagens = personagens.filter((cada)=> {return cada.nome != null});
+        console.log(nomes);
 
 
         // 5.	Adicione mais um personagem chamado Capitã Marvel, data de Aparição 1977 e editora Marvel;
         //
         console.log("Adicione mais um personagem chamado Capitã Marvel, data de Aparição 1977 e editora Marvel");
 
-        personagens.push("Capitã Marvel", 1977, "Marvel");
+        personagens.push({nome: "Capitã Marvel",dataAparicao: 1977, editora:"Marvel"});
         console.log(personagens);
 
 
@@ -97,10 +106,9 @@
         //
         console.log("Mostre a quantidade de personagens da Marvel que possuem na lista");
 
-        var personagensMarvel = personagens.filter( (personagem) => {
+         personagensMarvel = personagens.filter( (personagem) => {
             return personagem.editora === 'Marvel';
         } );
-        //Será?
         console.log(personagensMarvel.length);
 
 
@@ -108,9 +116,20 @@
         // 
         console.log(" Mostre o nome e a idade dos personagens");
 
-        let nomesPersonagens = personagens.filter((cada)=> {return cada.nome && cada.idade != null});
-        console.log(nomesPersonagens);
+        let NomeIdade = personagens.map(p => {
 
+            var today = new Date();
+            var ano = today.getFullYear();
+
+            var ListaNomesIdades = {};
+
+            ListaNomesIdades.nome = p.nome;
+            ListaNomesIdades.Idade = ano - (p.dataAparicao);
+
+            return ListaNomesIdades;
+        });
+
+        console.log(NomeIdade);
     </script>
 
 </body>

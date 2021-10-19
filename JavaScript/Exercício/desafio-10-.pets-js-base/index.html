@@ -76,23 +76,25 @@
             //
             console.log("Some a idade de todos os pets");
 
-            let idades = [pets(p => p.idade)];
+            let idades = pets.map(p=>p.idade);
+            //console.log(idades);
             let soma = idades.reduce((total, idade)=> total + idade, 0)
             console.log(soma);
+            
 
             
             // 4.	Traga somente os nomes dos pets;
             //
             console.log("Traga somente os nomes dos pets");
 
-            let nomePets = pets.filter((pet)=> {return pet.nome});
+            let nomePets = pets.map(p => p.nome);
             console.log(nomePets);
 
             // 5.	Adicione mais um pet chamado doguinho, cuja idade é igual a 13 e o tipo seja cachorro;
             //
             console.log("Adicione mais um pet chamado doguinho, cuja idade é igual a 13 e o tipo seja cachorro");
 
-            pets.push("doguinho", 13, "cachorro");
+            pets.push({nome:"doguinho",idade: 13, tipoPet: "cachorro"});
             console.log(pets);
 
             // 6.   Mostre a quantidade de cachorros que possuem na lista
