@@ -36,3 +36,18 @@
     transform: rotate(360deg);
   }
 }
+
+.btn{
+  color: white;
+  height: 25px;
+  font-weight: 600;
+  margin: 10px;
+}
+
+.pausar{
+  background-color: red;
+}
+
+.retomar{
+  background-color: green;
+}
