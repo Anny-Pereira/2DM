@@ -1,0 +1,39 @@
+1.	Defina o uso do banco de dados "cursos"
+RESPOSTA:
+use "cursos"
+db cursos
+
+2.	Crie uma collection para armazenar as "matérias"
+RESPOSTA:
+db.createCollection("materias")
+db.materias.find().pretty()
+
+
+3.	Insira 5 novos registros conforme descrições abaixo:
+
+Titulo = Titulo U
+Descrição = Java
+Concluída = verdadeiro
+
+Titulo = Titulo O
+Descrição = CSharp
+Concluída = falso
+
+Titulo = Titulo P
+Descrição = Firebase
+
+Titulo = Titulo Y
+Descrição = Microsoft
+
+Titulo = Titulo R
+Descrição = Oracle
+Data de Inclusão = data de hoje
+
+
+RESPOSTA:
+db.materias.insertOne({titulo: "Titulo U", descricao: "Java", concluida: true})
+db.materias.insertMany([{titulo: "Titulo O", descricao: "CSharp", concluida: false}, {titulo: "Titulo P", descricao: "Firebase"}, {titulo: "Titulo Y", descricao: "Microsoft"}])
+db.materias.insert({tiulo: "Titulo R", descricao: "Oracle", data_de_conclusao: "09/12/2021"})
+db.materias.find().pretty()
+
+
