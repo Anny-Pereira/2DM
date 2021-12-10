@@ -4,7 +4,7 @@ Descrição = Java Best
 Concluída = verdadeiro
 
 RESPOSTA:
-db.materias.update({"_id": ObjectId("61b209bbe92c8378693fd18e")},{titulo: "Titulo Uava", descricao: "Java Best", concluida: true})
+db.materias.update({"_id": ObjectId("61b26bc9e87e51314d3cf86b")},{titulo: "Titulo Uava", descricao: "Java Best", concluida: true})
 db.materias.find().pretty()
 
 
@@ -13,7 +13,7 @@ Descrição = CShark
 Concluída = falso
 
 RESPOSTA:
-db.materias.update({"_id": ObjectId("61b20ce86c0201f1d3ead13c")}, {titulo: "Titulo OSharp", descricao: "CShark", concluida: false})
+db.materias.update({"_id": ObjectId("61b26bdce87e51314d3cf86c")}, {titulo: "Titulo OSharp", descricao: "CShark", concluida: false})
 db.materias.find().pretty()
 
 
@@ -22,7 +22,7 @@ Titulo = Titulo Pirebase
 Descrição = Fireb4se
 
 RESPOSTA:
-db.materias.update({"_id": ObjectId("61b20ce86c0201f1d3ead13d"),  {titulo: "Titulo Pirebase", descricao: "Fireb4ase"})
+db.materias.update({"_id": ObjectId("61b26bdce87e51314d3cf86d")},  {titulo: "Titulo Pirebase", descricao: "Fireb4ase"})
 db.materias.find().pretty()
 
 
@@ -30,7 +30,7 @@ Titulo = Titulo YMicrosoft
 Descrição = MicroSOFT
 
 RESPOSTA:
-db.materias.update({"_id": ObjectId("61b20ce86c0201f1d3ead13e")}, {titulo: "Titulo YMicrosoft", descricao: "MicroSOFT"})
+db.materias.update({"_id":ObjectId("61b26bdce87e51314d3cf86e")}, {titulo: "Titulo YMicrosoft", descricao: "MicroSOFT"})
 db.materias.find().pretty()
 
 
@@ -39,5 +39,7 @@ Descrição = Oracle Inc.
 Data de Inclusão = data de hoje
 
 RESPOSTA:
+db.materias.update({"_id":ObjectId("61b26bece87e51314d3cf86f")}, {titulo: "Titulo Roracle", descricao: "Oracle Inc.", data_de_inclusao: "09/12/2021"})
+db.materias.find().pretty()
 
 
